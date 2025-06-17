@@ -1,0 +1,16 @@
+name: jalawave
+services:
+  jalawave-frontend-acs:
+    container_name: jalawave-frontend-acs
+    image: jalawave4/acs
+    ports:
+      - "3001:3000"
+    environment:
+      - NEXT_PUBLIC_GENIEACS_URL=http://60.253.103.102:7557
+    networks:
+      - jalawave
+    restart: always
+
+networks:
+  jalawave:
+    name: jalawave
